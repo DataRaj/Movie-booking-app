@@ -30,4 +30,121 @@ public class Booking implements Serializable {
 
     @Column(name = "total_price")
     private String totalPrice;
+
+    @Column(name = "created_on")
+    private String createdOn;
+
+
+    public String getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(String bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getTheatreId() {
+        return theatreId;
+    }
+
+    public void setTheatreId(String theatreId) {
+        this.theatreId = theatreId;
+    }
+
+    public String getPaymentId() {
+        return paymentId;
+    }
+
+    public void setPaymentId(String paymentId) {
+        this.paymentId = paymentId;
+    }
+
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
+    }
+
+    public String getNotificationId() {
+        return notificationId;
+    }
+
+    public void setNotificationId(String notificationId) {
+        this.notificationId = notificationId;
+    }
+
+    public String getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(String totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public String getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(String createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public String getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(String updatedOn) {
+        this.updatedOn = updatedOn;
+    }
+
+    public String getSeatBooked() {
+        return seatBooked;
+    }
+
+    public void setSeatBooked(String seatBooked) {
+        this.seatBooked = seatBooked;
+    }
+
+    public String getSeatNumber() {
+        return seatNumber;
+    }
+
+    public void setSeatNumber(String seatNumber) {
+        this.seatNumber = seatNumber;
+    }
+
+    @Column(name = "updated_on")
+    private String updatedOn;
+
+    @Column(name = "seat_Booked")
+    private String seatBooked;
+
+    @Column(name = "seat_number")
+    private String seatNumber;
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "bookingId='" + bookingId + '\'' +
+                ", userId='" + userId + '\'' +
+                ", theatreId='" + theatreId + '\'' +
+                ", paymentId='" + paymentId + '\'' +
+                ", movieId='" + movieId + '\'' +
+                ", notificationId='" + notificationId + '\'' +
+                ", totalPrice='" + totalPrice + '\'' +
+                ", createdOn='" + createdOn + '\'' +
+                ", updatedOn='" + updatedOn + '\'' +
+                ", seatBooked='" + seatBooked + '\'' +
+                ", seatNumber='" + seatNumber + '\'' +
+                '}';
+    }
 }

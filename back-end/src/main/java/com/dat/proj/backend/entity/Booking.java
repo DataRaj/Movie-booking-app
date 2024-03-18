@@ -1,9 +1,11 @@
 package com.dat.proj.backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 
@@ -32,8 +34,24 @@ public class Booking implements Serializable {
     private String totalPrice;
 
     @Column(name = "created_on")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private String createdOn;
 
+    @Column(name = "updated_on")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private String updatedOn;
+
+    @Column(name = "deleted")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private String deleted;
+    @Column(name = "seat_Booked")
+    private String seatBooked;
+
+    @Column(name = "seat_number")
+    private String seatNumber;
 
     public String getBookingId() {
         return bookingId;
@@ -123,14 +141,6 @@ public class Booking implements Serializable {
         this.seatNumber = seatNumber;
     }
 
-    @Column(name = "updated_on")
-    private String updatedOn;
-
-    @Column(name = "seat_Booked")
-    private String seatBooked;
-
-    @Column(name = "seat_number")
-    private String seatNumber;
     @Override
     public String toString() {
         return "Booking{" +

@@ -1,8 +1,7 @@
-package util;
+package com.dat.proj.backend.util;
 
 import java.io.Serializable;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**

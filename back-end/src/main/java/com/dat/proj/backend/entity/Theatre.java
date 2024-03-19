@@ -13,8 +13,8 @@ public class Theatre implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "theater_id")
-    private String theaterId;
+    @Column(name = "theatre_id")
+    private String theatreId;
 
     @Column(name = "address")
     private String address;
@@ -52,12 +52,12 @@ public class Theatre implements Serializable {
         return serialVersionUID;
     }
 
-    public String getTheaterId() {
-        return theaterId;
+    public String getTheatreId() {
+        return theatreId;
     }
 
-    public void setTheaterId(String theaterId) {
-        this.theaterId = theaterId;
+    public void setTheatreId(String theaterId) {
+        this.theatreId = theatreId;
     }
 
     public String getAddress() {
@@ -134,7 +134,7 @@ public class Theatre implements Serializable {
 
     public Theatre(String theaterId, String address, String city, String country, String name, String languages, String userName) {
         super();
-        this.theaterId = theaterId;
+        this.theatreId = theaterId;
         this.address = address;
         this.city = city;
         this.country = country;

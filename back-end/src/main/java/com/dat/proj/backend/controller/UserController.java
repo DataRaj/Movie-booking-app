@@ -18,7 +18,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
-import util.ResponseParser;
+import com.dat.proj.backend.util.ResponseParser;
 
 import java.time.LocalDateTime;
 import java.util.regex.Matcher;

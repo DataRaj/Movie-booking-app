@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.io.Serializable;
 
 public class Booking implements Serializable {
@@ -46,6 +45,7 @@ public class Booking implements Serializable {
     @Column(name = "deleted")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
     private String deleted;
     @Column(name = "seat_Booked")
     private String seatBooked;

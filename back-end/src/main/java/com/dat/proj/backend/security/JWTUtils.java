@@ -17,7 +17,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 
 public class JWTUtils {
-    private String secret = "bookmyshow";
+    private final String secret = "movie-booking";
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);

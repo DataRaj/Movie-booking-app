@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class UrlServiceImpl {
-    private String allowedCharString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    private char[] allowedChars = allowedCharString.toCharArray();
+    private final String allowedCharString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    private final char[] allowedChars = allowedCharString.toCharArray();
 
     @Autowired
     private UrlRepository urlRepository;

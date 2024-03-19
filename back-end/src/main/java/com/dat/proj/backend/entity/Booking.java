@@ -7,57 +7,61 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Booking implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "booking_id", updatable = false, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String bookingId;
+    private Long bookingId;
 
     @Column(name = "user_name")
     private String userId;
 
-    @Column(name = "theatre_id")
+    @Column(name = "theater_id")
     private String theatreId;
 
     @Column(name = "payment_id")
-    private String paymentId;
+    private Payment paymentId;
 
     @Column(name = "movie_id")
     private String movieId;
 
     @Column(name = "notification_id")
-    private String notificationId;
+    private UUID notificationId;
 
     @Column(name = "total_price")
-    private String totalPrice;
+    private int totalPrice;
+
 
     @Column(name = "created_on")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String createdOn;
+    private LocalDateTime createdOn = LocalDateTime.now();
 
     @Column(name = "updated_on")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private String updatedOn;
+    private LocalDateTime updatedOn;
 
     @Column(name = "deleted")
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDateTime deleted;
 
-    private String deleted;
-    @Column(name = "seat_Booked")
-    private String seatBooked;
+    @Column(name = "seat_booked")
+    private int seatBooked;
 
-    @Column(name = "seat_number")
+    @Column(name = "seat_numbers")
     private String seatNumber;
 
-    public String getBookingId() {
+    public Long getBookingId() {
         return bookingId;
     }
 
-    public void setBookingId(String bookingId) {
+    public void setBookingId(Long bookingId) {
         this.bookingId = bookingId;
     }
 
@@ -77,11 +81,11 @@ public class Booking implements Serializable {
         this.theatreId = theatreId;
     }
 
-    public String getPaymentId() {
+    public Payment getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(String paymentId) {
+    public void setPaymentId(Payment paymentId) {
         this.paymentId = paymentId;
     }
 
@@ -93,53 +97,63 @@ public class Booking implements Serializable {
         this.movieId = movieId;
     }
 
-    public String getNotificationId() {
+    public UUID getNotificationId() {
         return notificationId;
     }
 
-    public void setNotificationId(String notificationId) {
+    public void setNotificationId(UUID notificationId) {
         this.notificationId = notificationId;
     }
 
-    public String getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public String getCreatedOn() {
+    public LocalDateTime getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(String createdOn) {
+    public void setCreatedOn(LocalDateTime createdOn) {
         this.createdOn = createdOn;
     }
 
-    public String getUpdatedOn() {
+    public LocalDateTime getUpdatedOn() {
         return updatedOn;
     }
 
-    public void setUpdatedOn(String updatedOn) {
+    public void setUpdatedOn(LocalDateTime updatedOn) {
         this.updatedOn = updatedOn;
     }
 
-    public String getSeatBooked() {
+    public LocalDateTime getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(LocalDateTime deleted) {
+        this.deleted = deleted;
+    }
+
+    public int getSeatBooked() {
         return seatBooked;
     }
 
-    public void setSeatBooked(String seatBooked) {
+    public void setSeatBooked(int seatBooked) {
         this.seatBooked = seatBooked;
     }
 
-    public String getSeatNumber() {
+    public String getSeatNumbers() {
         return seatNumber;
     }
 
-    public void setSeatNumber(String seatNumber) {
-        this.seatNumber = seatNumber;
+    public void setSeatNumbers(String seatNumbers) {
+        this.seatNumber = seatNumbers;
     }
+
+
 
     @Override
     public String toString() {
